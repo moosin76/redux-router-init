@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import Root from "./Root";
 import registerServiceWorker from "./registerServiceWorker";
 import { AppContainer } from "react-hot-loader";
 
@@ -14,9 +14,9 @@ const render = Component => {
   );
 };
 
-render(App);
+render(Root);
 
 if (module.hot) {
-  module.hot.accept('./App', ()=>render(App));
+  module.hot.accept('./Root', ()=>render(Root));
 }
 registerServiceWorker();
