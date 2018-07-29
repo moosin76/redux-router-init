@@ -46,11 +46,13 @@ module.exports = {
     // require.resolve('webpack-dev-server/client') + '?/',
     // require.resolve('webpack/hot/dev-server'),
     require.resolve('react-dev-utils/webpackHotDevClient'),
+    'react-hot-loader/patch',
     // Finally, this is your app's code:
     paths.appIndexJs,
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
+    
   ],
   output: {
     // Add /* filename */ comments to generated require()s in the output.
@@ -149,6 +151,7 @@ module.exports = {
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
+              plugins: ['react-hot-loader/babel'],
             },
           },
           // "postcss" loader applies autoprefixer to our CSS.
